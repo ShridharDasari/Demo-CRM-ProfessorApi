@@ -22,10 +22,10 @@ public class EnrolledStudentDao {
 	private static List<EnrolledStudent> enrolledStudents;
 	{
 		enrolledStudents = new ArrayList();
-		enrolledStudents.add(new EnrolledStudent(101L, "John", "Doe",  "121-232-3435","Algebra"));
-		enrolledStudents.add(new EnrolledStudent(201L, "Russ", "Smith",  "343-545-2345","Geometry"));
-		enrolledStudents.add(new EnrolledStudent(301L, "Kate", "Williams",  "876-237-2987","AppliedScience"));
-		enrolledStudents.add(new EnrolledStudent(System.currentTimeMillis(), "Viral", "Patel", "356-758-8736","Astronomy"));
+		enrolledStudents.add(new EnrolledStudent(101L, "John", "Doe",  "A100","Algebra"));
+		enrolledStudents.add(new EnrolledStudent(201L, "Russ", "Smith",  "A200","Geometry"));
+		enrolledStudents.add(new EnrolledStudent(301L, "Kate", "Williams",  "A300","AppliedScience"));
+		enrolledStudents.add(new EnrolledStudent(401L, "Viral", "Patel", "A400","Astronomy"));
 	}
 
 	/**
