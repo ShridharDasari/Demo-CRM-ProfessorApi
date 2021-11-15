@@ -11,24 +11,33 @@ import java.io.Serializable;
 import java.util.Date;
 
 
-public class EnrolledStudent implements Serializable {
+public class Student implements Serializable {
 	private Long id;
 	private String firstName;
 	private String lastName;
 	private String rollNumber;
 	private String subject;
+	private String grade;
 
 
-	public EnrolledStudent(Long id, String firstName, String lastName, String rollNumber, String subject) {
+	public Student(Long id, String firstName, String lastName, String rollNumber, String subject, String grade) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.rollNumber = rollNumber;
 		this.subject = subject;
+		this.grade = grade;
 	}
 
-	
-	public EnrolledStudent() {
+	public String getGrade() {
+		return grade;
+	}
+
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+
+	public Student() {
 	}
 
 	public Long getId() {

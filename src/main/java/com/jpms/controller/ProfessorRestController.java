@@ -3,24 +3,20 @@
  */
 package com.jpms.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.ws.rs.core.MediaType;
-
+import com.jpms.bean.Grade;
+import com.jpms.service.ReportCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jpms.bean.Professor;
@@ -66,6 +62,8 @@ public class ProfessorRestController {
 		return new ResponseEntity(professor, HttpStatus.OK);
 	}
 
+
+
 	
 	@DeleteMapping("/delete/professors/{id}")
 	public ResponseEntity deleteProfessor(@PathVariable Long id) {
@@ -88,6 +86,20 @@ public class ProfessorRestController {
 		}
 
 		return new ResponseEntity(professor, HttpStatus.OK);
+	}
+
+	@Autowired
+	ReportCardService reportCardService;
+	@PostMapping(value = "/post/addGrade")
+	public ResponseEntity addGrade(@RequestBody Grade grade) {
+
+		if(reportCardService.AddGrade_Course(grade)){
+			return new ResponseEntity("Added Grade",HttpStatus.OK);
+		}else{
+			return new ResponseEntity("Grade not added as StudentId and Course details did not match",HttpStatus.NOT_FOUND);
+		}
+
+
 	}
 
 }

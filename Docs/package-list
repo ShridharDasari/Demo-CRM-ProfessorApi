@@ -4,4 +4,5 @@ com.jpms.config
 com.jpms.controller
 com.jpms.dao
 com.jpms.exception
+com.jpms.service
 com.jpms.utils
