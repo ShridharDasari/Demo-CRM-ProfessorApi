@@ -1,0 +1,7 @@
+com.jpms.application
+com.jpms.bean
+com.jpms.config
+com.jpms.controller
+com.jpms.dao
+com.jpms.exception
+com.jpms.utils
